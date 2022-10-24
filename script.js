@@ -26,7 +26,7 @@ function makeGrid(size) {
 
 
 
-makeGrid(64);
+makeGrid(32);
 /* 
 
 - set squareLength var = to pixels per square
@@ -43,11 +43,13 @@ makeGrid(64);
 */
 
 
+/* 
 
+Features:
+  - buttons to change grid size
+  - buttons to be in black / rainbow / eraser / clear
 
-
-
-
+*/
 
 
 
