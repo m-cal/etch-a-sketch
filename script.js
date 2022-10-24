@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
 
+
+
 /**
  * Makes a grid.
  * @param {number} size The number of squares per row / column.
@@ -13,11 +15,18 @@ function makeGrid(size) {
     div.style.height = `${squareLength}px`;
     div.style.width = `${squareLength}px`;
     div.classList.add('square');
+    div.addEventListener('mousemove', (event) => {
+      if (event.buttons > 0) {
+        div.style.backgroundColor = 'black';
+      }
+    });
     container.appendChild(div);
   }
 }
 
-makeGrid(16);
+
+
+makeGrid(64);
 /* 
 
 - set squareLength var = to pixels per square

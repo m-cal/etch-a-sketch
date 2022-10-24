@@ -8,7 +8,7 @@ html {
 .container {
   width: 960px;
   height: 960px;
-  background-color: honeydew;
+  /* background-color: honeydew; */
   margin: auto;
   margin-top: 200px;
 }
@@ -18,11 +18,15 @@ html {
   padding: 0px;
   display: inline-block;
   position: relative;
-  vertical-align: top;
-  outline: 1px black solid;
+  vertical-align: middle;
+  outline: 2px black solid;
   background-color: pink;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-out;
 }
 
 .square:hover {
   background-color: purple;
+
 }
+
