@@ -1,3 +1,28 @@
 html {
   background-color: lightskyblue;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  width: 960px;
+  height: 960px;
+  background-color: honeydew;
+  margin: auto;
+  margin-top: 200px;
+}
+
+.square {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  outline: 1px black solid;
+  background-color: pink;
+}
+
+.square:hover {
+  background-color: purple;
 }
