@@ -4,7 +4,15 @@ let penColor = 'black';
 const container = document.querySelector('.container');
 
 const blackButton = document.querySelector('#black-button');
+blackButton.addEventListener('click', (event => {
+  penColor = 'black';
+}));
+
 const rainbowButton = document.querySelector('#rainbow-button');
+rainbowButton.addEventListener('click', (event => {
+  penColor = 'rainbow';
+}));
+
 const eraserButton = document.querySelector('#eraser-button');
 
 const resetButton = document.querySelector('#reset-button');
@@ -36,7 +44,7 @@ largeButton.addEventListener('click', (event) => {
  * @param {string} color The color to set the 'pen' the user will write on the etch a sketch with. Accepts either 'black' or 'rainbow'. Defaults to black.
  * @returns Either black or a random color from ROYGBIV.
  */
-function setPenColor(color = 'black') {
+function setPenColor(color = penColor) {
   if (color == 'black') {
     return 'black';
   } else if (color == 'rainbow') {
@@ -66,9 +74,9 @@ function makeGrid(size) {
   }
 }
 
-function draw(div,event) {
+function draw(div, event, color = setPenColor()) {
   if (event.buttons > 0) {
-    div.style.backgroundColor = penColor;
+    div.style.backgroundColor = color;
   }
 }
 
