@@ -1,14 +1,18 @@
 html {
-  background-color: lightskyblue;
+  background-color: #e70c0d;
   border: 0px;
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
-  margin-top: 40px;
+  margin-top: 10px;
   text-align: center;
   font-size: 5rem;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 0px;
+  color: gold;
+  text-shadow: 4px 4px 4px black;
 }
 
 .container {
@@ -18,7 +22,8 @@ h1 {
   margin: auto;
   margin-top: 25px;
   margin-bottom: 100px;
-  border: 10px pink solid;
+  border: 10px black solid;
+  border-radius: 8px;
 }
 
 .square {
@@ -34,7 +39,7 @@ h1 {
 }
 
 .square:hover {
-  background-color: purple;
+  background-color: black;
 
 }
 
@@ -53,6 +58,17 @@ button {
   font-size: 20px;
   border-radius: 8px;
   background-color: white;
+  font-family: 'Quicksand', sans-serif;
+  border: 3px black solid;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 5px #262626;
+}
+
+button:hover {
+  border: 3px white solid;
 }
 
 #rainbow-button {
