@@ -1,6 +1,50 @@
+let currentSize = 32;
+let penColor = 'black';
+
 const container = document.querySelector('.container');
 
+const blackButton = document.querySelector('#black-button');
+const rainbowButton = document.querySelector('#rainbow-button');
+const eraserButton = document.querySelector('#eraser-button');
 
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', (event) => {
+  clearGrid();
+  return makeGrid(currentSize);
+});
+
+const smallButton = document.querySelector('#small-button');
+smallButton.addEventListener('click', (event) => {
+  clearGrid();
+  return makeGrid(16);
+});
+
+const mediumButton = document.querySelector('#medium-button');
+mediumButton.addEventListener('click', (event) => {
+  clearGrid();
+  return makeGrid(32);
+});
+
+const largeButton = document.querySelector('#large-button');
+largeButton.addEventListener('click', (event) => {
+  clearGrid();
+  return makeGrid(64);
+});
+
+/**
+ * 
+ * @param {string} color The color to set the 'pen' the user will write on the etch a sketch with. Accepts either 'black' or 'rainbow'. Defaults to black.
+ * @returns Either black or a random color from ROYGBIV.
+ */
+function setPenColor(color = 'black') {
+  if (color == 'black') {
+    return 'black';
+  } else if (color == 'rainbow') {
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    return randomColor;
+  }
+}
 
 /**
  * Makes a grid.
@@ -8,6 +52,7 @@ const container = document.querySelector('.container');
  * Note this number is squared to generate the grid.
  */
 function makeGrid(size) {
+  currentSize = size;
   let squareLength = 960 / size;
   // goes to size^2
   for (let square = 0; square < (size * size); square++) {
@@ -15,18 +60,27 @@ function makeGrid(size) {
     div.style.height = `${squareLength}px`;
     div.style.width = `${squareLength}px`;
     div.classList.add('square');
-    div.addEventListener('mousemove', (event) => {
-      if (event.buttons > 0) {
-        div.style.backgroundColor = 'black';
-      }
-    });
+    div.id = square;
+    div.addEventListener('mousemove', (event) => draw(div, event));
     container.appendChild(div);
   }
 }
 
+function draw(div,event) {
+  if (event.buttons > 0) {
+    div.style.backgroundColor = penColor;
+  }
+}
+
+function clearGrid() {
+  container.querySelectorAll('div').forEach(div => {
+    div.removeEventListener('mousemove', (event) => draw(div, event));
+  });
+  container.innerHTML = '';
+}
 
 
-makeGrid(32);
+makeGrid(64);
 /* 
 
 - set squareLength var = to pixels per square
