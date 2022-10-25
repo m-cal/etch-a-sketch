@@ -15,10 +15,10 @@ h1 {
   font-size: 0px;
   width: 960px;
   height: 960px;
-  /* background-color: honeydew; */
   margin: auto;
   margin-top: 25px;
   margin-bottom: 100px;
+  border: 10px pink solid;
 }
 
 .square {
@@ -28,7 +28,7 @@ h1 {
   position: relative;
   vertical-align: middle;
   outline: 1px black solid;
-  background-color: pink;
+  background-color: white;
   transition-duration: 0.4s;
   transition-timing-function: ease-out;
 }

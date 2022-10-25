@@ -14,6 +14,9 @@ rainbowButton.addEventListener('click', (event => {
 }));
 
 const eraserButton = document.querySelector('#eraser-button');
+eraserButton.addEventListener('click', (event => {
+  penColor = 'white';
+}));
 
 const resetButton = document.querySelector('#reset-button');
 resetButton.addEventListener('click', (event) => {
@@ -47,6 +50,8 @@ largeButton.addEventListener('click', (event) => {
 function setPenColor(color = penColor) {
   if (color == 'black') {
     return 'black';
+  } else if (color == 'white') {
+    return 'white';
   } else if (color == 'rainbow') {
     const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
