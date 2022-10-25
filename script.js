@@ -93,7 +93,7 @@ function clearGrid() {
 }
 
 
-makeGrid(64);
+makeGrid(32);
 /* 
 
 - set squareLength var = to pixels per square
