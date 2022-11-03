@@ -1,9 +1,9 @@
 let currentSize = 32;
-let penColor = 'black';
+let penColor = '#ffd700';
 
 const container = document.querySelector('.container');
 
-const colorChooseButton = document.querySelector('#color-choose-button');
+const colorChooseButton = document.querySelector('#color-picker');
 colorChooseButton.oninput = () => penColor = `${colorChooseButton.value}`;
 
 const blackButton = document.querySelector('#black-button');
