@@ -86,3 +86,10 @@ p {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
+
+#color-picker {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 80px;
+  border: none;
+}

@@ -3,6 +3,9 @@ let penColor = 'black';
 
 const container = document.querySelector('.container');
 
+const colorChooseButton = document.querySelector('#color-choose-button');
+colorChooseButton.oninput = () => penColor = `${colorChooseButton.value}`;
+
 const blackButton = document.querySelector('#black-button');
 blackButton.onclick = () => penColor = 'black';
 
@@ -45,6 +48,8 @@ function setPenColor(color = penColor) {
     const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     return randomColor;
+  } else {
+    return penColor;
   }
 }
 
